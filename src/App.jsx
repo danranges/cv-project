@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import PersonalData from "./components/PersonalData";
 import Output from "./components/Output";
 
 class App extends React.Component {
@@ -8,7 +9,7 @@ class App extends React.Component {
 
     this.state = {
       personal: {
-        name: "Dan",
+        name: "",
         email: "",
         phone: "",
       },
@@ -18,11 +19,20 @@ class App extends React.Component {
     };
   }
 
+  handleChange = (e) => {
+    this.setState({
+      personal: {
+        ...this.state.personal,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
   render() {
     return (
       <div className='App'>
-        <h1 className=''>Hello</h1>
-        <Output personal={this.state.personal} />
+        <PersonalData handleChange={this.handleChange} data={this.state.personal} />
+        <Output cvData={this.state} />
       </div>
     );
   }
