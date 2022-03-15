@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css";
 
-class PersonalData extends React.Component {
+class PersonalInput extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -10,7 +10,7 @@ class PersonalData extends React.Component {
     const { handleChange } = this.props;
     const { name, email, phone } = this.props.data;
     return (
-      <div className='flex flex-col max-w-md'>
+      <div className='flex flex-col max-w-sm m-1'>
         <input
           name='name'
           type='text'
@@ -37,4 +37,4 @@ class PersonalData extends React.Component {
   }
 }
 
-export default PersonalData;
+export default PersonalInput;
