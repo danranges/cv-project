@@ -28,7 +28,7 @@ class EduInput extends React.Component {
   render() {
     const { school } = this.state;
     return (
-      <div className='flex flex-col max-w-sm m-1 border-2 border-red-500'>
+      <div className='flex flex-col w-80 m-1 border-2'>
         <input
           name='school'
           type='text'

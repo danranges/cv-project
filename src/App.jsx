@@ -3,6 +3,7 @@ import "./index.css";
 import PersonalInput from "./components/PersonalInput";
 import Output from "./components/Output";
 import EduInputsSection from "./components/EduInputsSection";
+import InputContainer from "./components/InputContainer";
 
 class App extends React.Component {
   constructor(props) {
@@ -43,12 +44,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App'>
-        <PersonalInput handleChange={this.handlePersonalChange} data={this.state.personal} />
-        <EduInputsSection
-          handleChange={this.handleEduChange}
-          schoolCount={this.state.education.length}
-        />
+      <div className='App pt-2'>
+        <InputContainer title='Personal Info'>
+          <PersonalInput handleChange={this.handlePersonalChange} data={this.state.personal} />
+        </InputContainer>
+        <InputContainer title='Educational Info'>
+          <EduInputsSection
+            handleChange={this.handleEduChange}
+            schoolCount={this.state.education.length}
+          />
+        </InputContainer>
         <Output cvData={this.state} />
       </div>
     );

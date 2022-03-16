@@ -10,7 +10,7 @@ class PersonalInput extends React.Component {
     const { handleChange } = this.props;
     const { name, email, phone } = this.props.data;
     return (
-      <div className='flex flex-col max-w-sm m-1'>
+      <div className='flex flex-col w-80 m-1'>
         <input
           name='name'
           type='text'
