@@ -17,12 +17,13 @@ class EduInput extends React.Component {
   }
 
   handleChange = (e) => {
-    this.setState({
-      ...this.state,
-      [e.target.name]: e.target.value,
-    });
-
-    this.props.pushChange(this.state);
+    this.setState(
+      {
+        ...this.state,
+        [e.target.name]: e.target.value,
+      },
+      () => this.props.pushChange(this.state),
+    );
   };
 
   render() {
