@@ -31,7 +31,7 @@ class App extends React.Component {
   };
 
   handleEduChange = (eduBlock) => {
-    if (this.state.education.length === 0) {
+    if (!this.state.education.find(({ id }) => id === eduBlock.id)) {
       this.setState({ education: this.state.education.concat(eduBlock) });
     } else {
       this.setState({
@@ -44,16 +44,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App pt-2'>
+      <div className='App p-3'>
         <InputContainer title='Personal Info'>
           <PersonalInput handleChange={this.handlePersonalChange} data={this.state.personal} />
         </InputContainer>
         <InputContainer title='Educational Info'>
-          <EduInputsSection
-            handleChange={this.handleEduChange}
-            schoolCount={this.state.education.length}
-          />
+          <EduInputsSection handleChange={this.handleEduChange} education={this.state.education} />
         </InputContainer>
+        <InputContainer title='Work Experience'></InputContainer>
+        <InputContainer title='Skills'></InputContainer>
         <Output cvData={this.state} />
       </div>
     );

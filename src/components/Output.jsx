@@ -8,7 +8,7 @@ class Output extends React.Component {
 
   render() {
     return (
-      <div className='m-1'>
+      <div className='m-2 p-2'>
         <div>Personal:</div>
         <div>{JSON.stringify(this.props.cvData.personal, null, 4)}</div>
         <div>Education:</div>

@@ -7,13 +7,9 @@ class EduInput extends React.Component {
     super(props);
 
     this.state = {
-      id: generate(),
-      school: "",
+      id: this.props.key,
+      school: this.props.school,
     };
-  }
-
-  componentDidMount() {
-    this.props.pushChange(this.state);
   }
 
   handleChange = (e) => {
@@ -27,14 +23,16 @@ class EduInput extends React.Component {
   };
 
   render() {
-    const { school } = this.state;
     return (
-      <div className='flex flex-col w-80 m-1 border-2'>
+      <div key={this.props.key} className='flex flex-col w-80 m-1 p-2 bg-zinc-200 rounded-md'>
+        <div className='flex justify-end mx-0.5'>
+          <button>X</button>
+        </div>
         <input
           name='school'
           type='text'
           placeholder='School'
-          value={school}
+          value={this.props.school}
           onChange={this.handleChange}
           className='border-2'></input>
       </div>
