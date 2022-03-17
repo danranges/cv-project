@@ -25,11 +25,11 @@ class EduInputsSection extends React.Component {
   };
 
   render() {
+    const { education, handleChange } = this.props;
     return (
       <div>
-        <p>{JSON.stringify(this.props.education)}</p>
-        {this.props.education.map(({ id, school }) => {
-          <EduInput pushChange={this.props.handleChange} key={id} school={school} />;
+        {education.map(({ id, school }) => {
+          return <EduInput key={id} pushChange={handleChange} school={school} id={id} />;
         })}
         <button onClick={this.addSchool} className='border-2 p-1 active:bg-zinc-400'>
           Add School
