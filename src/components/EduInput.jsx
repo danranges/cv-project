@@ -19,10 +19,12 @@ class EduInput extends React.Component {
   };
 
   render() {
+    const { handleDelete } = this.props;
+
     return (
       <div className='flex flex-col w-80 m-1 p-2 bg-zinc-200 rounded-md'>
         <div className='flex justify-end mx-0.5'>
-          <button>X</button>
+          <button onClick={() => handleDelete(this.state)}>X</button>
         </div>
         <input
           name='school'

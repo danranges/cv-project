@@ -4,6 +4,7 @@ import PersonalInput from "./components/PersonalInput";
 import Output from "./components/Output";
 import EduInputsSection from "./components/EduInputsSection";
 import InputContainer from "./components/InputContainer";
+import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
 
 class App extends React.Component {
   constructor(props) {
@@ -42,6 +43,12 @@ class App extends React.Component {
     }
   };
 
+  handleEduDelete = (eduBlock) => {
+    this.setState({
+      education: this.state.education.filter(({ id }) => id !== eduBlock.id),
+    });
+  };
+
   render() {
     return (
       <div className='App p-3'>
@@ -49,7 +56,11 @@ class App extends React.Component {
           <PersonalInput handleChange={this.handlePersonalChange} data={this.state.personal} />
         </InputContainer>
         <InputContainer title='Educational Info'>
-          <EduInputsSection handleChange={this.handleEduChange} education={this.state.education} />
+          <EduInputsSection
+            handleChange={this.handleEduChange}
+            handleDelete={this.handleEduDelete}
+            education={this.state.education}
+          />
         </InputContainer>
         <InputContainer title='Work Experience'></InputContainer>
         <InputContainer title='Skills'></InputContainer>
