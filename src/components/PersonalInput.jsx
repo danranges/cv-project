@@ -17,21 +17,21 @@ class PersonalInput extends React.Component {
           placeholder='Name'
           value={name}
           className='border-2'
-          onChange={handleChange}></input>
+          onChange={(e) => handleChange(e, "personal")}></input>
         <input
           name='email'
           type='email'
           placeholder='Email'
           value={email}
           className='border-2'
-          onChange={handleChange}></input>
+          onChange={(e) => handleChange(e, "personal")}></input>
         <input
           name='phone'
           type='tel'
           placeholder='Phone'
           value={phone}
           className='border-2'
-          onChange={handleChange}></input>
+          onChange={(e) => handleChange(e, "personal")}></input>
       </div>
     );
   }

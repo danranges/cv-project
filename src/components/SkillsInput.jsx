@@ -18,7 +18,7 @@ class SkillsInput extends React.Component {
           value={skills}
           className='form-control border-2'
           rows='3'
-          onChange={handleChange}></textarea>
+          onChange={(e) => handleChange(e, "skills")}></textarea>
       </div>
     );
   }

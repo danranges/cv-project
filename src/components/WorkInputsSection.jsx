@@ -10,7 +10,7 @@ class WorkInputsSection extends React.Component {
 
   componentDidMount() {
     return this.props.work.length === 0
-      ? this.props.handleChange({
+      ? this.props.handleChange(null, "work", {
           id: generate(),
           company: "",
         })
@@ -18,10 +18,15 @@ class WorkInputsSection extends React.Component {
   }
 
   addJob = () => {
-    this.props.handleChange({
-      id: generate(),
-      company: "",
-    });
+    this.props.handleChange(
+      null,
+      "work",
+
+      {
+        id: generate(),
+        company: "",
+      },
+    );
   };
 
   render() {

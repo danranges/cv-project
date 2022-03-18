@@ -19,34 +19,30 @@ class App extends React.Component {
     skills: "",
   };
 
-  handlePersonalChange = (e) => {
-    this.setState({
-      personal: {
-        ...this.state.personal,
-        [e.target.name]: e.target.value,
-      },
-    });
-  };
-
-  handleEduChange = (eduBlock) => {
-    if (!this.state.education.find(({ id }) => id === eduBlock.id)) {
-      this.setState({ education: this.state.education.concat(eduBlock) });
-    } else {
+  handleChange = (e, section, obj) => {
+    if (section === "personal") {
       this.setState({
-        education: this.state.education.map((edu) => {
-          return edu.id === eduBlock.id ? eduBlock : edu;
-        }),
+        personal: {
+          ...this.state.personal,
+          [e.target.name]: e.target.value,
+        },
       });
+      return;
     }
-  };
 
-  handleWorkChange = (jobBlock) => {
-    if (!this.state.work.find(({ id }) => id === jobBlock.id)) {
-      this.setState({ work: this.state.work.concat(jobBlock) });
+    if (section === "skills") {
+      this.setState({
+        skills: e.target.value,
+      });
+      return;
+    }
+
+    if (!this.state[section].find(({ id }) => id === obj.id)) {
+      this.setState({ [section]: this.state[section].concat(obj) });
     } else {
       this.setState({
-        work: this.state.work.map((edu) => {
-          return edu.id === jobBlock.id ? jobBlock : edu;
+        [section]: this.state[section].map((prev) => {
+          return prev.id === obj.id ? obj : prev;
         }),
       });
     }
@@ -58,34 +54,28 @@ class App extends React.Component {
     });
   };
 
-  handleSkillsChange = (e) => {
-    this.setState({
-      skills: e.target.value,
-    });
-  };
-
   render() {
     return (
       <div className='App p-3'>
         <InputContainer title='Personal Info'>
-          <PersonalInput handleChange={this.handlePersonalChange} data={this.state.personal} />
+          <PersonalInput handleChange={this.handleChange} data={this.state.personal} />
         </InputContainer>
         <InputContainer title='Educational Info'>
           <EduInputsSection
-            handleChange={this.handleEduChange}
+            handleChange={this.handleChange}
             handleDelete={this.handleDelete}
             education={this.state.education}
           />
         </InputContainer>
         <InputContainer title='Work Experience'>
           <WorkInputsSection
-            handleChange={this.handleWorkChange}
+            handleChange={this.handleChange}
             handleDelete={this.handleDelete}
             work={this.state.work}
           />
         </InputContainer>
         <InputContainer title='Skills'>
-          <SkillsInput handleChange={this.handleSkillsChange} skills={this.state.skills} />
+          <SkillsInput handleChange={this.handleChange} skills={this.state.skills} />
         </InputContainer>
         <Output cvData={this.state} />
       </div>

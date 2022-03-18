@@ -10,18 +10,28 @@ class EduInputsSection extends React.Component {
 
   componentDidMount() {
     return this.props.education.length === 0
-      ? this.props.handleChange({
-          id: generate(),
-          school: "",
-        })
+      ? this.props.handleChange(
+          null,
+          "education",
+
+          {
+            id: generate(),
+            school: "",
+          },
+        )
       : null;
   }
 
   addSchool = () => {
-    this.props.handleChange({
-      id: generate(),
-      school: "",
-    });
+    this.props.handleChange(
+      null,
+      "education",
+
+      {
+        id: generate(),
+        school: "",
+      },
+    );
   };
 
   render() {
