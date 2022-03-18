@@ -1,10 +1,10 @@
 import React from "react";
 import "../index.css";
 
-class EduInput extends React.Component {
+class WorkInput extends React.Component {
   state = {
     id: this.props.id,
-    school: this.props.school,
+    company: this.props.company,
   };
 
   handleChange = (e) => {
@@ -26,10 +26,10 @@ class EduInput extends React.Component {
           <button onClick={() => handleDelete(this.state)}>X</button>
         </div>
         <input
-          name='school'
+          name='company'
           type='text'
-          placeholder='School'
-          value={this.state.school}
+          placeholder='Company'
+          value={this.state.company}
           onChange={this.handleChange}
           className='border-2'></input>
       </div>
@@ -37,4 +37,4 @@ class EduInput extends React.Component {
   }
 }
 
-export default EduInput;
+export default WorkInput;

@@ -3,8 +3,8 @@ import "./index.css";
 import PersonalInput from "./components/PersonalInput";
 import Output from "./components/Output";
 import EduInputsSection from "./components/EduInputsSection";
+import WorkInputsSection from "./components/WorkInputsSection";
 import InputContainer from "./components/InputContainer";
-import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
 
 class App extends React.Component {
   constructor(props) {
@@ -43,9 +43,27 @@ class App extends React.Component {
     }
   };
 
+  handleWorkChange = (jobBlock) => {
+    if (!this.state.work.find(({ id }) => id === jobBlock.id)) {
+      this.setState({ work: this.state.work.concat(jobBlock) });
+    } else {
+      this.setState({
+        work: this.state.work.map((edu) => {
+          return edu.id === jobBlock.id ? jobBlock : edu;
+        }),
+      });
+    }
+  };
+
   handleEduDelete = (eduBlock) => {
     this.setState({
       education: this.state.education.filter(({ id }) => id !== eduBlock.id),
+    });
+  };
+
+  handleWorkDelete = (jobBlock) => {
+    this.setState({
+      work: this.state.work.filter(({ id }) => id !== jobBlock.id),
     });
   };
 
@@ -62,7 +80,13 @@ class App extends React.Component {
             education={this.state.education}
           />
         </InputContainer>
-        <InputContainer title='Work Experience'></InputContainer>
+        <InputContainer title='Work Experience'>
+          <WorkInputsSection
+            handleChange={this.handleWorkChange}
+            handleDelete={this.handleWorkDelete}
+            work={this.state.work}
+          />
+        </InputContainer>
         <InputContainer title='Skills'></InputContainer>
         <Output cvData={this.state} />
       </div>
