@@ -23,7 +23,7 @@ class WorkInput extends React.Component {
     return (
       <div className='flex flex-col w-80 m-1 p-2 bg-zinc-200 rounded-md'>
         <div className='flex justify-end mx-0.5'>
-          <button onClick={() => handleDelete(this.state)}>X</button>
+          <button onClick={() => handleDelete(this.state, "work")}>X</button>
         </div>
         <input
           name='company'

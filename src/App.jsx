@@ -52,15 +52,9 @@ class App extends React.Component {
     }
   };
 
-  handleEduDelete = (eduBlock) => {
+  handleDelete = (obj, section) => {
     this.setState({
-      education: this.state.education.filter(({ id }) => id !== eduBlock.id),
-    });
-  };
-
-  handleWorkDelete = (jobBlock) => {
-    this.setState({
-      work: this.state.work.filter(({ id }) => id !== jobBlock.id),
+      [section]: this.state[section].filter(({ id }) => id !== obj.id),
     });
   };
 
@@ -79,14 +73,14 @@ class App extends React.Component {
         <InputContainer title='Educational Info'>
           <EduInputsSection
             handleChange={this.handleEduChange}
-            handleDelete={this.handleEduDelete}
+            handleDelete={this.handleDelete}
             education={this.state.education}
           />
         </InputContainer>
         <InputContainer title='Work Experience'>
           <WorkInputsSection
             handleChange={this.handleWorkChange}
-            handleDelete={this.handleWorkDelete}
+            handleDelete={this.handleDelete}
             work={this.state.work}
           />
         </InputContainer>
