@@ -4,23 +4,20 @@ import PersonalInput from "./components/PersonalInput";
 import Output from "./components/Output";
 import EduInputsSection from "./components/EduInputsSection";
 import WorkInputsSection from "./components/WorkInputsSection";
+import SkillsInput from "./components/SkillsInput";
 import InputContainer from "./components/InputContainer";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      personal: {
-        name: "",
-        email: "",
-        phone: "",
-      },
-      education: [],
-      work: [],
-      skills: "",
-    };
-  }
+  state = {
+    personal: {
+      name: "",
+      email: "",
+      phone: "",
+    },
+    education: [],
+    work: [],
+    skills: "",
+  };
 
   handlePersonalChange = (e) => {
     this.setState({
@@ -67,6 +64,12 @@ class App extends React.Component {
     });
   };
 
+  handleSkillsChange = (e) => {
+    this.setState({
+      skills: e.target.value,
+    });
+  };
+
   render() {
     return (
       <div className='App p-3'>
@@ -87,7 +90,9 @@ class App extends React.Component {
             work={this.state.work}
           />
         </InputContainer>
-        <InputContainer title='Skills'></InputContainer>
+        <InputContainer title='Skills'>
+          <SkillsInput handleChange={this.handleSkillsChange} skills={this.state.skills} />
+        </InputContainer>
         <Output cvData={this.state} />
       </div>
     );
