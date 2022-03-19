@@ -9,17 +9,7 @@ class EduInputsSection extends React.Component {
   }
 
   componentDidMount() {
-    return this.props.education.length === 0
-      ? this.props.handleChange(
-          null,
-          "education",
-
-          {
-            id: generate(),
-            school: "",
-          },
-        )
-      : null;
+    return this.props.education.length === 0 ? this.addSchool() : null;
   }
 
   addSchool = () => {
@@ -30,6 +20,7 @@ class EduInputsSection extends React.Component {
       {
         id: generate(),
         school: "",
+        program: "",
       },
     );
   };
@@ -38,12 +29,13 @@ class EduInputsSection extends React.Component {
     const { education, handleChange, handleDelete } = this.props;
     return (
       <div>
-        {education.map(({ id, school }) => {
+        {education.map(({ id, school, program }) => {
           return (
             <EduInput
               key={id}
               pushChange={handleChange}
               handleDelete={handleDelete}
+              program={program}
               school={school}
               id={id}
             />

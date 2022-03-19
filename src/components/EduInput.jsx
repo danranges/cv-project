@@ -7,6 +7,7 @@ class EduInput extends React.Component {
   state = {
     id: this.props.id,
     school: this.props.school,
+    program: this.props.program,
   };
 
   handleChange = (e) => {
@@ -34,6 +35,13 @@ class EduInput extends React.Component {
           type='text'
           placeholder='School'
           value={this.state.school}
+          onChange={this.handleChange}
+          className='border-2'></input>
+        <input
+          name='program'
+          type='text'
+          placeholder='Program'
+          value={this.state.program}
           onChange={this.handleChange}
           className='border-2'></input>
       </div>

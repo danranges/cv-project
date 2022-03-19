@@ -9,12 +9,7 @@ class WorkInputsSection extends React.Component {
   }
 
   componentDidMount() {
-    return this.props.work.length === 0
-      ? this.props.handleChange(null, "work", {
-          id: generate(),
-          company: "",
-        })
-      : null;
+    return this.props.work.length === 0 ? this.addJob() : null;
   }
 
   addJob = () => {
