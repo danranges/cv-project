@@ -28,7 +28,7 @@ class EduInputsSection extends React.Component {
   render() {
     const { education, handleChange, handleDelete } = this.props;
     return (
-      <div>
+      <div className='flex flex-col w-full self-center p-2'>
         {education.map(({ id, school, program }) => {
           return (
             <EduInput
@@ -41,7 +41,9 @@ class EduInputsSection extends React.Component {
             />
           );
         })}
-        <button onClick={this.addSchool} className='border-2 p-1 active:bg-zinc-400'>
+        <button
+          onClick={this.addSchool}
+          className='bg-indigo-700 text-white m-2 py-2 px-12 w-fit rounded-md self-center'>
           Add School
         </button>
       </div>

@@ -10,13 +10,13 @@ class SkillsInput extends React.Component {
     const { handleChange, skills } = this.props;
 
     return (
-      <div className='flex flex-col w-80 m-1'>
+      <div className='flex flex-col mx-1 my-2 p-2 bg-indigo-50 rounded-md shadow-sm self-center'>
         <textarea
           name='skills'
           type='textarea'
           placeholder='Skills'
           value={skills}
-          className='form-control border-2'
+          className='border-2 border-indigo-200 p-1 w-80 rounded-md'
           rows='3'
           onChange={(e) => handleChange(e, "skills")}></textarea>
       </div>

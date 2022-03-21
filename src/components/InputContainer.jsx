@@ -9,7 +9,7 @@ class InputContainer extends React.Component {
   render() {
     const { title, children } = this.props;
     return (
-      <div className='max-w-fit m-2 p-2 bg-zinc-100 rounded-lg'>
+      <div className='flex flex-col w-96 m-2 p-2 bg-white rounded-lg shadow-md items-center'>
         <h3>{title}</h3>
         {children}
       </div>

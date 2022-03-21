@@ -56,7 +56,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App p-3'>
+      <div className='App p-3 bg-indigo-50'>
         <InputContainer title='Personal Info'>
           <PersonalInput handleChange={this.handleChange} data={this.state.personal} />
         </InputContainer>

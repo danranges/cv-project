@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import "../index.css";
 
 class WorkInput extends React.Component {
@@ -23,19 +23,19 @@ class WorkInput extends React.Component {
     const { handleDelete } = this.props;
 
     return (
-      <div className='flex flex-col w-80 m-1 p-2 bg-zinc-200 rounded-md'>
-        <div className='flex justify-end mx-0.5'>
-          <button onClick={() => handleDelete(this.state, "work")}>
-            <FontAwesomeIcon icon={faTrash} />
-          </button>
+      <div className='flex flex-col my-1 p-2 bg-indigo-50 rounded-md shadow-sm self-center items-center'>
+        <div className='flex mx-0.5'>
+          <input
+            name='company'
+            type='text'
+            placeholder='Company'
+            value={this.state.company}
+            onChange={this.handleChange}
+            className='border-2 border-indigo-200 p-1 w-80 rounded-md'></input>
         </div>
-        <input
-          name='company'
-          type='text'
-          placeholder='Company'
-          value={this.state.company}
-          onChange={this.handleChange}
-          className='border-2'></input>
+        <button onClick={() => handleDelete(this.state, "work")}>
+          <FontAwesomeIcon icon={faTrashCan} className='text-indigo-900' />
+        </button>
       </div>
     );
   }
