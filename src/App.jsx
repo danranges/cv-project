@@ -56,7 +56,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App p-3 bg-indigo-50'>
+      <div className='App flex flex-col items-center pt-3 bg-indigo-50 dark:bg-indigo-900'>
+        <div>
+          <button
+            onClick={() => {
+              document.getElementById("root").classList.toggle("dark");
+            }}>
+            dark mode
+          </button>
+        </div>
         <InputContainer title='Personal Info'>
           <PersonalInput handleChange={this.handleChange} data={this.state.personal} />
         </InputContainer>
