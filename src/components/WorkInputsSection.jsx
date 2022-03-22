@@ -20,6 +20,11 @@ class WorkInputsSection extends React.Component {
       {
         id: generate(),
         company: "",
+        position: "",
+        city: "",
+        start: "",
+        end: "",
+        desc: "",
       },
     );
   };
@@ -28,13 +33,18 @@ class WorkInputsSection extends React.Component {
     const { work, handleChange, handleDelete } = this.props;
     return (
       <div className='flex flex-col w-full self-center p-2'>
-        {work.map(({ id, company }) => {
+        {work.map(({ id, company, position, city, start, end, desc }) => {
           return (
             <WorkInput
               key={id}
               pushChange={handleChange}
               handleDelete={handleDelete}
               company={company}
+              position={position}
+              city={city}
+              start={start}
+              end={end}
+              desc={desc}
               id={id}
             />
           );

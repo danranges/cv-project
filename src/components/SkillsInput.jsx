@@ -17,7 +17,7 @@ class SkillsInput extends React.Component {
           placeholder='Skills'
           value={skills}
           className='border-2 border-indigo-200 p-1 w-80 rounded-md'
-          rows='3'
+          rows='4'
           onChange={(e) => handleChange(e, "skills")}></textarea>
       </div>
     );
