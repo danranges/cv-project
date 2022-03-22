@@ -21,6 +21,10 @@ class EduInputsSection extends React.Component {
         id: generate(),
         school: "",
         program: "",
+        degree: "",
+        city: "",
+        start: "",
+        end: "",
       },
     );
   };
@@ -29,14 +33,18 @@ class EduInputsSection extends React.Component {
     const { education, handleChange, handleDelete } = this.props;
     return (
       <div className='flex flex-col w-full self-center p-2'>
-        {education.map(({ id, school, program }) => {
+        {education.map(({ id, school, program, degree, city, start, end }) => {
           return (
             <EduInput
               key={id}
               pushChange={handleChange}
               handleDelete={handleDelete}
               program={program}
+              degree={degree}
               school={school}
+              city={city}
+              start={start}
+              end={end}
               id={id}
             />
           );

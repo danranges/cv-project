@@ -13,6 +13,8 @@ class App extends React.Component {
       name: "",
       email: "",
       phone: "",
+      city: "",
+      title: "",
     },
     education: [],
     work: [],
@@ -65,27 +67,31 @@ class App extends React.Component {
             dark mode
           </button>
         </div>
-        <InputContainer title='Personal Info'>
-          <PersonalInput handleChange={this.handleChange} data={this.state.personal} />
-        </InputContainer>
-        <InputContainer title='Educational Info'>
-          <EduInputsSection
-            handleChange={this.handleChange}
-            handleDelete={this.handleDelete}
-            education={this.state.education}
-          />
-        </InputContainer>
-        <InputContainer title='Work Experience'>
-          <WorkInputsSection
-            handleChange={this.handleChange}
-            handleDelete={this.handleDelete}
-            work={this.state.work}
-          />
-        </InputContainer>
-        <InputContainer title='Skills'>
-          <SkillsInput handleChange={this.handleChange} skills={this.state.skills} />
-        </InputContainer>
-        <Output cvData={this.state} />
+        <div className='flex'>
+          <div className='flex flex-col'>
+            <InputContainer title='Personal Info'>
+              <PersonalInput handleChange={this.handleChange} data={this.state.personal} />
+            </InputContainer>
+            <InputContainer title='Educational Info'>
+              <EduInputsSection
+                handleChange={this.handleChange}
+                handleDelete={this.handleDelete}
+                education={this.state.education}
+              />
+            </InputContainer>
+            <InputContainer title='Work Experience'>
+              <WorkInputsSection
+                handleChange={this.handleChange}
+                handleDelete={this.handleDelete}
+                work={this.state.work}
+              />
+            </InputContainer>
+            <InputContainer title='Skills'>
+              <SkillsInput handleChange={this.handleChange} skills={this.state.skills} />
+            </InputContainer>
+          </div>
+          <Output cvData={this.state} />
+        </div>
       </div>
     );
   }
