@@ -28,7 +28,7 @@ class WorkInput extends React.Component {
     const { handleDelete } = this.props;
 
     return (
-      <div className='flex flex-col my-1 p-2 bg-indigo-50 rounded-md shadow-sm self-center items-center'>
+      <div className='flex flex-col my-1 mx-0 p-2 bg-indigo-50 rounded-md shadow-sm self-center items-center'>
         <input
           name='company'
           type='text'

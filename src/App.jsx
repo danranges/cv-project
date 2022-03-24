@@ -58,17 +58,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App flex flex-col items-center pt-3 bg-indigo-50 dark:bg-indigo-900'>
-        <div>
-          <button
-            onClick={() => {
-              document.getElementById("root").classList.toggle("dark");
-            }}>
-            dark mode
-          </button>
-        </div>
-        <div className='flex'>
-          <div className='flex flex-col'>
+      <div className='App flex flex-col items-center bg-indigo-50 dark:bg-indigo-800 h-screen'>
+        <div className='flex '>
+          <div className='flex flex-col max-h-screen overflow-y-scroll min-w-fit'>
             <InputContainer title='Personal Info'>
               <PersonalInput handleChange={this.handleChange} data={this.state.personal} />
             </InputContainer>

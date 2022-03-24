@@ -51,7 +51,7 @@ class EduInputsSection extends React.Component {
         })}
         <button
           onClick={this.addSchool}
-          className='bg-indigo-700 text-white m-2 py-2 px-12 w-fit rounded-md self-center'>
+          className='bg-indigo-500 text-white m-2 py-2 px-12 w-fit rounded-md self-center'>
           Add School
         </button>
       </div>

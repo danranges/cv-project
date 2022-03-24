@@ -22,7 +22,7 @@ class PersonalInput extends React.Component {
           name='title'
           type='text'
           placeholder='Title'
-          value={city}
+          value={title}
           className='border-2 border-indigo-200 p-1 w-80 rounded-md mb-1'
           onChange={(e) => handleChange(e, "personal")}></input>
         <input
@@ -45,13 +45,6 @@ class PersonalInput extends React.Component {
           placeholder='Phone'
           value={phone}
           className='border-2 border-indigo-200 p-1 w-80 rounded-md mb-1'
-          onChange={(e) => handleChange(e, "personal")}></input>
-        <input
-          name='city'
-          type='text'
-          placeholder='Location'
-          value={city}
-          className='border-2 border-indigo-200 p-1 w-80 rounded-md mb-0.5'
           onChange={(e) => handleChange(e, "personal")}></input>
       </div>
     );

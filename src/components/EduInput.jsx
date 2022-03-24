@@ -28,7 +28,7 @@ class EduInput extends React.Component {
     const { handleDelete } = this.props;
 
     return (
-      <div className='flex flex-col my-1 p-2 bg-indigo-50 rounded-md shadow-sm self-center items-center'>
+      <div className='flex flex-col my-1 p-2 bg-indigo-50 dark:bg-indigo-400 rounded-md shadow-sm self-center items-center'>
         <div className='flex flex-col mx-0.5'>
           <input
             name='school'
