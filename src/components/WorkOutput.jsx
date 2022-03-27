@@ -7,10 +7,10 @@ class WorkOutput extends React.Component {
   }
 
   render() {
-    const { company, position, desc, city, start, end, id } = this.props.job;
+    const { company, position, desc, city, start, end } = this.props.job;
 
     return (
-      <div key={id}>
+      <div>
         <div>{company}</div>
         <div>{position}</div>
         <div>{city}</div>
