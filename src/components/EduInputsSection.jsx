@@ -23,8 +23,8 @@ class EduInputsSection extends React.Component {
         program: "",
         degree: "",
         city: "",
-        start: "",
-        end: "",
+        start: Date(),
+        end: Date(),
       },
     );
   };

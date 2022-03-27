@@ -29,7 +29,6 @@ class App extends React.Component {
           [e.target.name]: e.target.value,
         },
       });
-      this.handleLocalStorage();
       return;
     }
 
@@ -37,7 +36,6 @@ class App extends React.Component {
       this.setState({
         skills: e.target.value,
       });
-      this.handleLocalStorage();
       return;
     }
 
@@ -50,7 +48,6 @@ class App extends React.Component {
         }),
       });
     }
-    this.handleLocalStorage();
   };
 
   handleDelete = (obj, section) => {
@@ -58,10 +55,6 @@ class App extends React.Component {
       [section]: this.state[section].filter(({ id }) => id !== obj.id),
     });
     this.handleLocalStorage();
-  };
-
-  handleLocalStorage = () => {
-    console.log("handled");
   };
 
   render() {
