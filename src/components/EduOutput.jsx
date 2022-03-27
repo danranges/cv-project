@@ -14,11 +14,13 @@ class EduOutput extends React.Component {
       <div className='my-2'>
         <div className='flex justify-between'>
           <div className='font-extrabold'>{school}</div>
-          <p>
-            {format(new Date(start), "yyyy")}
-            {start && end ? " - " : null}
-            {format(new Date(end), "yyyy")}
-          </p>
+          {school ? (
+            <p>
+              {format(new Date(start), "yyyy")}
+              {start && end ? " - " : null}
+              {format(new Date(end), "yyyy")}
+            </p>
+          ) : null}
         </div>
         <div className='flex justify-between'>
           <div className='flex'>
