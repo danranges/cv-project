@@ -6,6 +6,7 @@ import EduInputsSection from "./components/EduInputsSection";
 import WorkInputsSection from "./components/WorkInputsSection";
 import SkillsInput from "./components/SkillsInput";
 import InputContainer from "./components/InputContainer";
+import { isThisISOWeek } from "date-fns";
 
 class App extends React.Component {
   state = {
@@ -57,9 +58,19 @@ class App extends React.Component {
     this.handleLocalStorage();
   };
 
+  handleSave = () => {
+    localStorage.setItem("cvData", JSON.stringify(this.state));
+    console.log(localStorage.getItem("cvData"));
+  };
+
+  componentDidMount = () => {
+    this.setState(JSON.parse(localStorage.getItem("cvData")));
+  };
+
   render() {
     return (
       <div className='App flex flex-col items-center bg-indigo-50 dark:bg-indigo-800 h-screen'>
+        <button onClick={this.handleSave}>Save</button>
         <div className='flex '>
           <div className='flex flex-col max-h-screen overflow-y-scroll min-w-fit'>
             <InputContainer title='Personal Info'>
