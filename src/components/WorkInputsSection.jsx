@@ -2,6 +2,7 @@ import React from "react";
 import WorkInput from "./WorkInput";
 import { generate } from "shortid";
 import "../index.css";
+import { format } from "date-fns";
 
 class WorkInputsSection extends React.Component {
   constructor(props) {
@@ -23,8 +24,8 @@ class WorkInputsSection extends React.Component {
         position: "",
         city: "",
         start: "",
-        end: "",
-        desc: "",
+        end: Date(),
+        desc: Date(),
       },
     );
   };

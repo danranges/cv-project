@@ -6,7 +6,6 @@ import EduInputsSection from "./components/EduInputsSection";
 import WorkInputsSection from "./components/WorkInputsSection";
 import SkillsInput from "./components/SkillsInput";
 import InputContainer from "./components/InputContainer";
-import { isThisISOWeek } from "date-fns";
 
 class App extends React.Component {
   state = {
