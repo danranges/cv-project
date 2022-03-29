@@ -2,13 +2,8 @@ import React from "react";
 import WorkInput from "./WorkInput";
 import { generate } from "shortid";
 import "../index.css";
-import { format } from "date-fns";
 
 class WorkInputsSection extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     return this.props.work.length === 0 ? this.addJob() : null;
   }

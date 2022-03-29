@@ -2,10 +2,6 @@ import React from "react";
 import "../index.css";
 
 class InputContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { title, children } = this.props;
     return (

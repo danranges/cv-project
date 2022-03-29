@@ -3,10 +3,6 @@ import { format } from "date-fns";
 import "../index.css";
 
 class EduOutput extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { school, program, degree, city, start, end } = this.props.school;
 

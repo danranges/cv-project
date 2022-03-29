@@ -2,10 +2,6 @@ import React from "react";
 import "../index.css";
 
 class SkillsInput extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { handleChange, skills } = this.props;
 

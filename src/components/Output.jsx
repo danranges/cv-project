@@ -5,10 +5,6 @@ import PersonalOutput from "./PersonalOutput";
 import WorkOutput from "./WorkOutput";
 
 class Output extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { personal, education, work, skills } = this.props.cvData;
     return (

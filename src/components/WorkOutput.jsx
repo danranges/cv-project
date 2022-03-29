@@ -3,10 +3,6 @@ import { format } from "date-fns";
 import "../index.css";
 
 class WorkOutput extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { company, position, desc, city, start, end } = this.props.job;
 

@@ -1,14 +1,9 @@
 import React from "react";
 import EduInput from "./EduInput";
 import { generate } from "shortid";
-import { format } from "date-fns";
 import "../index.css";
 
 class EduInputsSection extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     return this.props.education.length === 0 ? this.addSchool() : null;
   }

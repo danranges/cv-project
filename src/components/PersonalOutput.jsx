@@ -2,10 +2,6 @@ import React from "react";
 import "../index.css";
 
 class PersonalOutput extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { name, title, city, email, phone } = this.props.personal;
 

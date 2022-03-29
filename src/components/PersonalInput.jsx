@@ -2,10 +2,6 @@ import React from "react";
 import "../index.css";
 
 class PersonalInput extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { handleChange } = this.props;
     const { name, email, phone, city, title } = this.props.data;
