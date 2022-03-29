@@ -16,7 +16,7 @@ The "CV Application" project brief can be found on
 
 The repo is hosted [here](https://github.com/danranges/cv-project)
 
-The live demo can be found [here](#)
+The live demo can be found [here](https://danranges.github.io/cv-project/)
 
 ## Technologies
 
