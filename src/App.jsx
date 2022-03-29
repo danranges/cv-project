@@ -69,7 +69,11 @@ class App extends React.Component {
   render() {
     return (
       <div className='App flex flex-col items-center bg-indigo-50 dark:bg-indigo-800 h-screen'>
-        <button onClick={this.handleSave}>Save</button>
+        <button
+          className='mt-2 py-1 px-10 bg-emerald-200 text-gray-900 border-2 border-white rounded-md hover:bg-emerald-400 active:bg-emerald-300'
+          onClick={this.handleSave}>
+          Save
+        </button>
         <div className='flex overflow-scroll'>
           <div className='flex flex-col max-h-screen overflow-y-scroll min-w-fit'>
             <InputContainer title='Personal Info'>
