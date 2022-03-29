@@ -23,9 +23,9 @@ class WorkInputsSection extends React.Component {
         company: "",
         position: "",
         city: "",
-        start: "",
+        start: Date(),
         end: Date(),
-        desc: Date(),
+        desc: "",
       },
     );
   };

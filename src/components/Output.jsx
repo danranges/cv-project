@@ -14,17 +14,17 @@ class Output extends React.Component {
     return (
       <div className='flex flex-col bg-white rounded-lg shadow-md m-2 p-2 w-[50rem] break-normal'>
         <PersonalOutput personal={personal} />
-        <div>Education:</div>
+        <div className='mt-2 text-3xl font-extralight'>Education:</div>
         {education.map((school) => {
           return <EduOutput key={school.id} school={school}></EduOutput>;
         })}
-        <div>Experience:</div>
+        <div className=' mt-2 text-3xl font-extralight'>Experience:</div>
         {work.map((job) => {
           return <WorkOutput key={job.id} job={job} />;
         })}
         <div className='mb-2'>
-          <div>Skills:</div>
-          <div>{JSON.stringify(skills)}</div>
+          <div className='mt-2 text-3xl font-extralight'>Skills:</div>
+          <div className='mt-2'>{skills}</div>
         </div>
       </div>
     );
